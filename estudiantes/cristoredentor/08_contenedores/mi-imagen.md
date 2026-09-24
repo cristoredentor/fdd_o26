@@ -25,6 +25,8 @@ URL: https://hub.docker.com/r/cristophergongs/roto
 ```text
 docker inspect --format '{{index .RepoDigests 0}}' <tu-usuario>/<tu-imagen>
 
+docker inspect --format '{{index .RepoDigests 0}}' cristophergongs/roto:v1
+cristophergongs/roto@sha256:b39db0c9863d47eb95ef134382dc4fa63e87f542aaabbb23bf9df986f3639632
 
 ```
 
