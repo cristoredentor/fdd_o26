@@ -18,7 +18,7 @@ da el navegador cuando estás con tu sesión abierta empieza con
 `hub.docker.com/repository/docker/` y **da 404 a todos los demás, incluido yo**.
 Ábrela en una ventana privada antes de entregar.
 
-URL: https://hub.docker.com/r/cristophergongs/hola 
+URL: https://hub.docker.com/r/cristophergongs/roto 
 
 ## El digest
 
@@ -34,19 +34,17 @@ Comando exacto:
 
 ```text
 
-docker run --rm cristophergongs/hola:v1
-
+docker pull cristophergongs/roto:v1
+docker run cristophergongs/roto:v1
 
 ```
 
 Salida que debo esperar:
 
 ```text
-Unable to find image 'cristophergongs/hola:v1' locally
-v1: Pulling from cristophergongs/hola
-Digest: sha256:b8fbf3117ec8eaf952efe8e55feb1f29e4e80a9ffee879ba6abb00c8eedc4596
-Status: Downloaded newer image for cristophergongs/hola:v1
-hola desde mi imagen
+
+Corriendo como: app
+requests 2.32.3
 
 
 ```
@@ -56,6 +54,8 @@ hola desde mi imagen
 Pega la salida **completa**, con sus líneas `Unable to find image locally` y
 `Pulling from`:
 
+
+
 ```text
 docker logout
 docker rmi -f <tu-usuario>/<tu-imagen>
@@ -63,14 +63,16 @@ docker run --rm <tu-usuario>/<tu-imagen>
 
 cris@laptop-cris:~/Documentos/ITAM/Fuentes/Github/fdd_o26/estudiantes/cristoredentor/08_contenedores$ docker logout
 Removing login credentials for https://index.docker.io/v1/
-cris@laptop-cris:~/Documentos/ITAM/Fuentes/Github/fdd_o26/estudiantes/cristoredentor/08_contenedores$ docker rmi -f cristophergongs/hola:v1
-Untagged: cristophergongs/hola:v1
-cris@laptop-cris:~/Documentos/ITAM/Fuentes/Github/fdd_o26/estudiantes/cristoredentor/08_contenedores$ docker run --rm cristophergongs/hola:v1
-Unable to find image 'cristophergongs/hola:v1' locally
-v1: Pulling from cristophergongs/hola
-Digest: sha256:b8fbf3117ec8eaf952efe8e55feb1f29e4e80a9ffee879ba6abb00c8eedc4596
-Status: Downloaded newer image for cristophergongs/hola:v1
-hola desde mi imagen
+cris@laptop-cris:~/Documentos/ITAM/Fuentes/Github/fdd_o26/estudiantes/cristoredentor/08_contenedores$ docker rmi -f cristophergongs/roto:v1    
+docker run --rm cristophergongs/roto:v1
+Untagged: cristophergongs/roto:v1
+Unable to find image 'cristophergongs/roto:v1' locally
+v1: Pulling from cristophergongs/roto
+Digest: sha256:b39db0c9863d47eb95ef134382dc4fa63e87f542aaabbb23bf9df986f3639632
+Status: Downloaded newer image for cristophergongs/roto:v1
+Corriendo como: app
+requests 2.32.3
+
 
 ```
 
@@ -80,12 +82,10 @@ Menos de 300 MB. Pega la salida con el tamaño visible:
 
 ```text
 docker images <tu-usuario>/<tu-imagen>
+cris@laptop-cris:~/Documentos/ITAM/Fuentes/Github/fdd_o26/estudiantes/cristoredentor/08_contenedores$ docker images cristophergongs/roto:v1
+                                                                                                                                            i Info →   U  In Use
 IMAGE                     ID             DISK USAGE   CONTENT SIZE   EXTRA
-cristophergongs/hola:v1   b8fbf3117ec8       12.1MB         3.63MB        
-hola:latest               b8fbf3117ec8       12.1MB         3.63MB        
-roto:v2                   dc15e7f2df23       1.64GB          421MB        
-roto:v3                   d5ef7057461e        198MB         48.8MB        
-ubuntu:latest             da6fc2be5478        160MB         45.3MB    U   
+cristophergongs/roto:v1   b39db0c9863d        198MB         48.8MB    U   
 
 
 ```
