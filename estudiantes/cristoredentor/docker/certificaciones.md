@@ -48,6 +48,9 @@ de los dos cursos que no habías visto en clase, o que en clase entendiste a
 medias y ahí se te acomodó.
 
 
-Me gustó mucho el tema de las redes y el uso de multi-stage build usado en los multi-platforms. Entender estos conceptos es fundamental para el desarrollo de 
-soluciones web escalables. Si por ejemplo queremos que una aplicación web pueda ser usado por diferentes sistemas operativos tenemos que diseñar nuestra
-imagen acorde a ello.
+Me gustó mucho el tema de las redes en Docker y cómo se combinan el multi-stage build con las imágenes multiplataforma (multi-arch). 
+El multi-stage build nos permite mantener las imágenes ligeras al separar la etapa de compilación de la etapa final de ejecución,
+mientras que el soporte multiplataforma nos permite construir una misma imagen para distintas arquitecturas (por ejemplo, amd64 y arm64),
+lo cual es clave si queremos que una aplicación funcione tanto en diferentes tipos de procesador o arquitectura.
+Entender estos conceptos es fundamental para el desarrollo de soluciones web escalables y portables, ya que nos obligan a diseñar nuestra
+imagen pensando en cómo y dónde se va a ejecutar, no solo en que funcione localmente.
