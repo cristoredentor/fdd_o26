@@ -35,7 +35,7 @@ Fecha: 2026/09/24
 
 Se llena en la **tercera** entrega, cuando el curso ya está completo.
 
-Fecha:
+Fecha: 2026-09-24
 
 URL del Statement of Accomplishment:
 
@@ -48,3 +48,6 @@ de los dos cursos que no habías visto en clase, o que en clase entendiste a
 medias y ahí se te acomodó.
 
 
+Me gustó mucho el tema de las redes y el uso de multi-stage build usado en los multi-platforms. Entender estos conceptos es fundamental para el desarrollo de 
+soluciones web escalables. Si por ejemplo queremos que una aplicación web pueda ser usado por diferentes sistemas operativos tenemos que diseñar nuestra
+imagen acorde a ello.
