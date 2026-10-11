@@ -25,3 +25,19 @@ def test_fila_buena_se_convierte() -> None:
     venta = Venta.model_validate(BUENA)
     assert venta.cantidad == 3
     assert venta.precio == 120.5
+
+#Veamos que pasa si añadimos una fila que no cumple con el model_validate 
+
+MALA = {
+    "fecha": "Centro", #Error puesto a propósito
+    "tienda": "Centro",
+    "producto": "P001",
+    "cantidad": "*",
+    "precio": "120.50",
+}
+
+def test_mala_definicion_venta() -> None:
+    with pytest.raises(ValidationError) as exc:
+        Venta.model_validate(MALA)
+    campos = {error["loc"][0] for error in exc.value.errors()}
+    assert campos == {"fecha", "cantidad"}
