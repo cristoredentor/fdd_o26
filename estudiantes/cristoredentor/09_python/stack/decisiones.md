@@ -18,12 +18,14 @@ Pega la salida completa de `pytest -v --no-header test_practica.py`,
 corrido en `stack/`. `--no-header` quita las líneas con la ruta de tu máquina.
 
 ```text
-==================================== test session starts ====================================
-collected 1 item                                                                            
+============================= test session starts ==============================
+collecting ... collected 3 items
 
-test_practica.py::test_fila_buena_se_convierte PASSED                                 [100%]
+test_practica.py::test_fila_buena_se_convierte PASSED                    [ 33%]
+test_practica.py::test_mala_definicion_venta PASSED                      [ 66%]
+test_practica.py::test_fecha_inexistente_se_rechaza PASSED               [100%]
 
-===================================== 1 passed in 0.30s =====================================
+============================== 3 passed in 0.27s ===============================
 ```
 
 ## Salida de ruff
@@ -31,9 +33,7 @@ test_practica.py::test_fila_buena_se_convierte PASSED                           
 Pega la salida de `ruff check practica.py test_practica.py`.
 
 ```text
-(.venv-stack) cris@laptop-cris:~/Documentos/ITAM/Fuentes/Github/fdd_o26/estudiantes/cristoredentor/09_python/stack$ ruff check practica.py test_practica.py
 All checks passed!
-
 ```
 
 ## Salida de mypy
@@ -41,6 +41,5 @@ All checks passed!
 Pega la salida de `mypy practica.py`.
 
 ```text
-(.venv-stack) cris@laptop-cris:~/Documentos/ITAM/Fuentes/Github/fdd_o26/estudiantes/cristoredentor/09_python/stack$ mypy practica.py
 Success: no issues found in 1 source file
 ```
