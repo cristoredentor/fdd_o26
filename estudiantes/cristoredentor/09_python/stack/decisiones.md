@@ -7,10 +7,9 @@ el stack escrito».
 
 | Qué cambié | Por qué | Qué patrón |
 |---|---|---|
-|Puse documentación a los métodos|Para ayudar al mantenimiento del código| |
-|Cambie pandas por polars|Como vimos en clase polars tiene muchas ventajas sobre pandas|Fuera del intérprete es rápido|
-|`.apply(lambda ...)` → `pl.col("cantidad") * pl.col("precio")`|`.apply` recorre fila por fila en Python; la expresión opera la columna completa|Fila vs columna|
-|`cantidad: Optional[int]` → `int` con `Field(gt=0)`|Con `None` permitido, pandas vuelve la columna `float`|El tipo decide la memoria|
+| Cambié pandas por Polars | pandas guarda tienda y producto como object, un objeto de Python por celda; Polars los guarda como str en Arrow, en un solo bloque de memoria | El tipo decide la memoria |
+| Cambié el .apply con lambda por una expresión de Polars que multiplica la columna cantidad por la columna precio | .apply llama una función de Python en cada fila; la expresión multiplica la columna entera en Rust | Fuera del intérprete es rápido |
+| Cambié el @validator y el Optional[int] por cantidad: int = Field(gt=0) | El validador es una función de Python que corre en cada fila; gt=0 lo revisa el núcleo de Pydantic en Rust. Además @validator, class Config y .dict() son de Pydantic v1 y desaparecen en v3 | Fuera del intérprete es rápido |
 
 ## Salida de pytest
 
