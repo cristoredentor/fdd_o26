@@ -10,7 +10,7 @@ Síntoma:
 
 ValueError: could not convert string to float: '1,200.00'
 
-Línea: 
+Línea: 37
 
 File "/home/cris/Documentos/ITAM/Fuentes/Github/fdd_o26/estudiantes/cristoredentor/09_python/por_dentro/revisa_esto.py", line 37, in main
 
@@ -28,9 +28,8 @@ Síntoma:
 
 En norte salen Fátima López y Gael Muñoz, que solo compran en centro.
 
-Línea: 
+Línea: 25
 
-25
 
 Por qué pasa: 
 
@@ -47,9 +46,8 @@ Síntoma:
 puntaje con hilos: 1.12 s
 puntaje sin hilos: 0.92 s
 
-Línea: 
+Línea: 59
 
-59
 
 Por qué pasa: 
 
@@ -65,9 +63,7 @@ Síntoma:
 
 Total con IVA de norte: $325.12, pero haciendo la cuenta a mano debería dar $336.73.
 
-Línea: 
-
-39
+Línea: 39
 
 Por qué pasa: 
 
@@ -83,14 +79,12 @@ Síntoma:
 
 La contabilidad NO cuadra
 
-Línea: 
-
-76
+Línea: 76
 
 Por qué pasa: 
 
 El total es un float con muchos decimales y se compara con == contra un número con centavos, entonces nunca son exactamente iguales.
 
-Qué le pedirías a la IA:
+Qué le pedirías a la IA: 
 
 Le pediría que use Decimal para el dinero y que redondee el total a centavos antes de compararlo con la contabilidad.
